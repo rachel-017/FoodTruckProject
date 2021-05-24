@@ -14,7 +14,7 @@ public class FoodTruck {
 		this.nameOfTruck = nameOfTruck;
 		this.foodType = foodType;
 		this.rating = rating;
-		this.newId = truckId;
+		FoodTruck.truckId = truckId;
 	}
 
 	public String getNameOfTruck() {
@@ -42,13 +42,13 @@ public class FoodTruck {
 	}
 
 	public int getTruckId(int id) {
-		return newId;
+		return FoodTruck.truckId;
 	}
 	
 	public void setTruckId(FoodTruck foodTruck) {
 		foodTrucks[FoodTruck.truckId] = foodTruck;
 		FoodTruck.truckId++;
-		this.newId = FoodTruck.truckId;
+		
 	}
 //		newTruckId = 0;
 //		for(int i =0; i<newTruckId; i++) {
@@ -65,16 +65,14 @@ public class FoodTruck {
 //		}
 //	}
 
-
 	@Override
 	public String toString() {
-		return "FoodTruck [nameOfTruck= " + nameOfTruck + ", foodType= " + foodType + ", rating= " + rating
-				+ ", truckId= " + FoodTruck.truckId + "]";
+		return "FoodTruck: " + nameOfTruck + " serves " + foodType + " and is rated " + rating
+				+ ". "+nameOfTruck+"'s ID number is " + FoodTruck.truckId + ".";
 	}
 
 	public void displayTruck() {
 		String truckInfo = this.toString();
 		System.out.println(truckInfo);
 	}
-
 }
